@@ -8,18 +8,20 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BASE] = LAYOUT(
-    Y_CPY, Y_PRV_GS, Y_NXT_GS,
-    Y_PST, Y_PRV_VI, Y_NXT_VI
+    LT(1, KC__MUTE), KC__VOLUP,   KC_MPLY,
+    KC_MRWD,         KC__VOLDOWN, KC_MFFD
   ),
 
   [_RAISE] = LAYOUT(
-    KC_TRNS, Y_SCL_GS, Y_TOG_GS,
-    _______, Y_DET_GS,  Y_NEW_GS
-  ),
-
-  [_LOWER] = LAYOUT(
-    _______, _______,  Y_SCU_VI,
-    KC_TRNS, Y_REW_VI, Y_SCD_VI
+    KC_TRNS, Y_PRV_VI, Y_NXT_VI,
+    Y_PST,   Y_PRV_GS, Y_NXT_GS
   ),
 
 };
+
+// KC_MPLY
+// KC_MFFD
+// KC_MRWD
+// KC__MUTE
+// KC__VOLUP
+// KC__VOLDOWN
