@@ -41,4 +41,5 @@ enum custom_keycodes {
   ,Y_PRV_VI
   ,Y_NXT_VI
   ,Y_REW_VI
+  ,Y_EE_LIAM
 };

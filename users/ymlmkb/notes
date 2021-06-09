@@ -5,7 +5,12 @@ rm -f *.bin *.hex; gmake clean all:ymlmkb
 
 # ---------------------------------------------------------------------------------------------------------------------------------
 
-vi keyboards/tada68/keymaps/ymlmkb/keymap.c keyboards/kbdfans/kbd67/rev2/keymaps/ymlmkb/keymap.c keyboards/massdrop/alt/keymaps/ymlmkb/keymap.c keyboards/fc660c/keymaps/ymlmkb/keymap.c keyboards/dztech/dz60rgb/keymaps/ymlmkb/keymap.c
+vi keyboards/tada68/keymaps/ymlmkb/keymap.c \
+   keyboards/kbdfans/kbd67/rev2/keymaps/ymlmkb/keymap.c \
+   keyboards/massdrop/alt/keymaps/ymlmkb/keymap.c \
+   keyboards/fc660c/keymaps/ymlmkb/keymap.c \
+   keyboards/dztech/dz60rgb/keymaps/ymlmkb/keymap.c \
+   keyboards/nk65/keymaps/ymlmkb/keymap.c
 
 vi keyboards/nullbitsco/scramble/keymaps/ymlmkb/keymap.c
 
