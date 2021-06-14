@@ -22,10 +22,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS,       Y_PRV_VI,  Y_NXT_VI,                        _______,                         _______,   _______,   KC_TRNS,             Y_PRV_GS, Y_TOG_GS, Y_NXT_GS
   ),
 };
-
-// KC_MPLY
-// KC_MFFD
-// KC_MRWD
-// KC__MUTE
-// KC__VOLUP
-// KC__VOLDOWN

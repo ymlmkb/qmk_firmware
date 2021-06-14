@@ -30,10 +30,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,       _______,   _______,                         _______,                         _______,   _______,                _______,  _______,  _______
   ),
 };
-
-// KC_MPLY
-// KC_MFFD
-// KC_MRWD
-// KC__MUTE
-// KC__VOLUP
-// KC__VOLDOWN

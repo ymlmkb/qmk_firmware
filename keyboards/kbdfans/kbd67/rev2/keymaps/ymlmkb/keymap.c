@@ -16,16 +16,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [_FUNC] = _LYOUT(
     MD_BOOT,   KC_F1,     KC_F2,     KC_F3,     KC_F4,     KC_F5,     KC_F6,     KC_F7,     KC_F8,     KC_F9,     KC_F10,    KC_F11,    KC_F12,      _______,  _______,  \
-    _______,    _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,   KC_HOME,   KC_END,     _______,  _______,  \
+    RGB_MOD,    RGB_VAI,   RGB_HUI,   RGB_SAI,   RGB_SPI,   RGB_TOG,   _______,   _______,   _______,   _______,   _______,   KC_HOME,   KC_END,     _______,  _______,  \
     KC_CAPS,     _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,              _______,  _______,  \
     _______,      _______,   _______,   Y_CPY,     Y_PST,     _______,   _______,   _______,   _______,   _______,   _______,   _______,             Y_SCL_GS, _______,  \
     KC_TRNS,       Y_PRV_VI,  Y_NXT_VI,                        _______,                         _______,   _______,   KC_TRNS,             Y_PRV_GS, Y_TOG_GS, Y_NXT_GS
   ),
 };
-
-// KC_MPLY
-// KC_MFFD
-// KC_MRWD
-// KC__MUTE
-// KC__VOLUP
-// KC__VOLDOWN
