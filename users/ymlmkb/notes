@@ -10,7 +10,8 @@ vi keyboards/tada68/keymaps/ymlmkb/keymap.c \
    keyboards/massdrop/alt/keymaps/ymlmkb/keymap.c \
    keyboards/fc660c/keymaps/ymlmkb/keymap.c \
    keyboards/dztech/dz60rgb/keymaps/ymlmkb/keymap.c \
-   keyboards/nk65/keymaps/ymlmkb/keymap.c
+   keyboards/nk65/keymaps/ymlmkb/keymap.c \
+   keyboards/tkc/portico/keymaps/ymlmkb/keymap.c
 
 vi keyboards/nullbitsco/scramble/keymaps/ymlmkb/keymap.c
 
@@ -20,7 +21,7 @@ vi users/ymlmkb/ymlmkb.c users/ymlmkb/ymlmkb.h
 
 # ---------------------------------------------------------------------------------------------------------------------------------
 
-TADA68 (Tada68)
+TADA68
 # reset via the button on the PCB.
 
 vi keyboards/tada68/keymaps/ymlmkb/keymap.c
@@ -50,7 +51,7 @@ gmake fc660c:ymlmkb:flash
 
 # ---------------------------------------------------------------------------------------------------------------------------------
 
-Drop Alt (Massdrop)
+Drop Alt
 # reset via the button on the PCB.
 
 vi keyboards/massdrop/alt/keymaps/ymlmkb/keymap.c
@@ -71,12 +72,22 @@ gmake dztech/dz60rgb/v2:ymlmkb:flash
 
 # ---------------------------------------------------------------------------------------------------------------------------------
 
-NK65 (NovelKeys)
+NovelKeys NK65
 # reset by holding esc and plugging in the board.
 
 vi keyboards/nk65/keymaps/ymlmkb/keymap.c
 gmake nk65:ymlmkb
 gmake nk65:ymlmkb:flash
+# reset the keyboard at your leisure; the flasher will check every 5 seconds.
+
+# ---------------------------------------------------------------------------------------------------------------------------------
+
+TheKeyDotCo Portico
+# reset by holding esc and plugging in the board.
+
+vi keyboards/tkc/portico/keymaps/ymlmkb/keymap.c
+gmake tkc/portico:ymlmkb
+gmake tkc/portico:ymlmkb:flash
 # reset the keyboard at your leisure; the flasher will check every 5 seconds.
 
 # =================================================================================================================================
