@@ -75,6 +75,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       break;
 
+    case Y_WB_VI:
+      if (record->event.pressed) {
+        SEND_STRING( ":w!" SS_TAP(X_ENT) );
+      }
+      break;
+
     case Y_EE_LIAM:
       if (record->event.pressed) {
         SEND_STRING( "Liam is the coolest guy EVAR!!!" );
