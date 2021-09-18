@@ -13,7 +13,8 @@ vi keyboards/tada68/keymaps/ymlmkb/keymap.c \
    keyboards/nk65/keymaps/ymlmkb/keymap.c \
    keyboards/tkc/portico/keymaps/ymlmkb/keymap.c
 
-vi keyboards/nullbitsco/scramble/keymaps/ymlmkb/keymap.c
+vi keyboards/nullbitsco/scramble/keymaps/ymlmkb/keymap.c \
+   keyboards/keebio/bdn9/keymaps/ymlmkb/keymap.c
 
 vi keyboards/ymlmkb/wasdv2_teensy/keymaps/ymlmkb/keymap.c keyboards/ymlmkb/ortho_tetris/keymaps/ymlmkb/keymap.c
 
@@ -101,6 +102,16 @@ gmake nullbitsco/scramble:ymlmkb
 gmake nullbitsco/scramble:ymlmkb:flash
 
 # ---------------------------------------------------------------------------------------------------------------------------------
+
+Keeb.io BDN9
+# reset via the button on the PCB.
+
+vi keyboards/keebio/bdn9/keymaps/ymlmkb/keymap.c
+gmake keebio/bdn9/rev2:ymlmkb
+# plug in the scramble with the lower-right-hand key held down.
+gmake keebio/bdn9/rev2:ymlmkb:flash
+
+# =================================================================================================================================
 
 WASDv2_Hacked (Teensy 2.0)
 # reset via the button you wired to the controller.
