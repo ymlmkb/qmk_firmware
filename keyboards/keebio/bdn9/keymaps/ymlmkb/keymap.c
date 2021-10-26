@@ -4,6 +4,7 @@
 #define _BASE 0
 #define _YRGB 1
 #define _YRST 2
+#define _SAVE 3
 
 enum encoder_names {
   _LEFT,
@@ -13,7 +14,7 @@ enum encoder_names {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
-    MO(_YRGB),    MO(_YRGB), MO(_YRGB),
+    MO(_YRGB),    RGB_TOG,   MO(_YRGB),
     S(C(KC_TAB)), C(KC_TAB), KC_PGUP,
     S(A(KC_TAB)), A(KC_TAB), KC_PGDN
   ),
@@ -33,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 void encoder_update_user(uint8_t index, bool clockwise) {
 
-  if (IS_LAYER_ON(_BASE)) {
+  if (IS_LAYER_ON(_SAVE)) {
     if (index == _LEFT) {
       if (clockwise) {
         tap_code(KC_MS_WH_UP);
@@ -63,7 +64,7 @@ void encoder_update_user(uint8_t index, bool clockwise) {
     }
   }
 
-  if (IS_LAYER_ON(_YRGB)) {
+  if (IS_LAYER_ON(_BASE)) {
     if (index == _LEFT) {
       if (clockwise) {
         rgb_matrix_increase_val();
@@ -72,6 +73,23 @@ void encoder_update_user(uint8_t index, bool clockwise) {
       }
     }
     else if (index == _MIDDLE) {
+      if (clockwise) {
+        rgb_matrix_step();
+      } else {
+        rgb_matrix_step_reverse();
+      }
+    }
+    else if (index == _RIGHT) {
+      if (clockwise) {
+        rgb_matrix_increase_speed();
+      } else {
+        rgb_matrix_decrease_speed();
+      }
+    }
+  }
+
+  if (IS_LAYER_ON(_YRGB)) {
+    if (index == _LEFT) {
       if (clockwise) {
         rgb_matrix_increase_hue();
       } else {

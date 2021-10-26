@@ -98,7 +98,7 @@ Nullbits Scramblepad
 
 vi keyboards/nullbitsco/scramble/keymaps/ymlmkb/keymap.c
 gmake nullbitsco/scramble:ymlmkb
-# plug in the scramble with the lower-right-hand key held down.
+# plug in the keypad with the lower-right-hand key held down.
 gmake nullbitsco/scramble:ymlmkb:flash
 
 # ---------------------------------------------------------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ Keeb.io BDN9
 
 vi keyboards/keebio/bdn9/keymaps/ymlmkb/keymap.c
 gmake keebio/bdn9/rev2:ymlmkb
-# plug in the scramble with the lower-right-hand key held down.
+# reset the keypad
 gmake keebio/bdn9/rev2:ymlmkb:flash
 
 # =================================================================================================================================
@@ -128,3 +128,8 @@ teensy_loader_cli -w --mcu=atmega32u4 -v ymlmkb_wasdv2_teensy_ymlmkb.hex
 ymlmkb_ortho_tetris_ymlmkb.hex
 # reset via the button you wired to the controller.
 # oh, you didn't do that?  tough shit.
+
+# =================================================================================================================================
+
+gmake massdrop/ctrl:sdaniels
+gmake kbdfans/kbdpad_mk2:sdaniels:flash
