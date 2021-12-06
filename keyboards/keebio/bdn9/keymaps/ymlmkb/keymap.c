@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-void encoder_update_user(uint8_t index, bool clockwise) {
+bool encoder_update_user(uint8_t index, bool clockwise) {
 
   if (IS_LAYER_ON(_SAVE)) {
     if (index == _LEFT) {
@@ -105,6 +105,7 @@ void encoder_update_user(uint8_t index, bool clockwise) {
     }
   }
 
+  return true;
 }
 
 // KC_MPLY

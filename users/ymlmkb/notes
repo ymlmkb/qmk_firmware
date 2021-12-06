@@ -1,26 +1,21 @@
+# =================================================================================================================================
+# USERSPACE NOTES
+# =================================================================================================================================
+
+git checkout master
+git fetch upstream
+git pull upstream master
+git push origin master
+
 # ---------------------------------------------------------------------------------------------------------------------------------
 
 cdqmk
 rm -f *.bin *.hex; gmake clean all:ymlmkb
+rm -f *.bin *.hex; gmake clean; qmk multibuild -km ymlmkb
 
-# ---------------------------------------------------------------------------------------------------------------------------------
-
-vi keyboards/tada68/keymaps/ymlmkb/keymap.c \
-   keyboards/kbdfans/kbd67/rev2/keymaps/ymlmkb/keymap.c \
-   keyboards/massdrop/alt/keymaps/ymlmkb/keymap.c \
-   keyboards/fc660c/keymaps/ymlmkb/keymap.c \
-   keyboards/dztech/dz60rgb/keymaps/ymlmkb/keymap.c \
-   keyboards/nk65/keymaps/ymlmkb/keymap.c \
-   keyboards/tkc/portico/keymaps/ymlmkb/keymap.c
-
-vi keyboards/nullbitsco/scramble/keymaps/ymlmkb/keymap.c \
-   keyboards/keebio/bdn9/keymaps/ymlmkb/keymap.c
-
-vi keyboards/ymlmkb/wasdv2_teensy/keymaps/ymlmkb/keymap.c keyboards/ymlmkb/ortho_tetris/keymaps/ymlmkb/keymap.c
-
-vi users/ymlmkb/ymlmkb.c users/ymlmkb/ymlmkb.h
-
-# ---------------------------------------------------------------------------------------------------------------------------------
+# =================================================================================================================================
+# MY KEYBOARDS
+# =================================================================================================================================
 
 TADA68
 # reset via the button on the PCB.
@@ -63,16 +58,6 @@ cd ~/Opt/massdrop-loader
 
 # ---------------------------------------------------------------------------------------------------------------------------------
 
-DZ60 (ATMega)
-# reset via the button on the PCB.
-
-vi keyboards/dztech/dz60rgb/keymaps/ymlmkb/keymap.c
-gmake dztech/dz60rgb/v2:ymlmkb
-gmake dztech/dz60rgb/v2:ymlmkb:flash
-# reset the keyboard at your leisure; the flasher will check every 5 seconds.
-
-# ---------------------------------------------------------------------------------------------------------------------------------
-
 NovelKeys NK65
 # reset by holding esc and plugging in the board.
 
@@ -91,6 +76,52 @@ gmake tkc/portico:ymlmkb
 gmake tkc/portico:ymlmkb:flash
 # reset the keyboard at your leisure; the flasher will check every 5 seconds.
 
+# ---------------------------------------------------------------------------------------------------------------------------------
+
+Nullbits Nibble
+# reset via the button on the Bit-C.
+
+vi keyboards/nullbitsco/nibble/keymaps/ymlmkb/keymap.c
+gmake nullbitsco/nibble:ymlmkb
+gmake nullbitsco/nibble:ymlmkb:flash
+# reset the keyboard at your leisure; the flasher will check every 5 seconds.
+
+# =================================================================================================================================
+# KEYBOARDS BUILT FOR OTHERS
+# =================================================================================================================================
+
+DZ60 (ATMega)
+# reset via the button on the PCB.
+
+vi keyboards/dztech/dz60rgb/keymaps/ymlmkb_liam/keymap.c
+gmake dztech/dz60rgb/v2:ymlmkb_liam
+gmake dztech/dz60rgb/v2:ymlmkb_liam:flash
+# reset the keyboard at your leisure; the flasher will check every 5 seconds.
+
+# ---------------------------------------------------------------------------------------------------------------------------------
+
+Drop CTRL
+# reset via the button on the PCB.
+
+vi keyboards/massdrop/ctrl/keymaps/ymlmkb_shaun/keymap.c
+gmake massdrop/ctrl:ymlmkb_shaun
+gmake massdrop/ctrl:ymlmkb_shaun:flash
+cd ~/Opt/massdrop-loader
+./mdloader_mac --first --download ~/Source/qmk_firmware/massdrop_ctrl_ymlmkb_sdaniels.bin --restart
+# reset the keyboard at your leisure; the flasher will check every second (for a minute, i think).
+
+# ---------------------------------------------------------------------------------------------------------------------------------
+
+KBDFans KBDPad Mark II
+# reset somehow
+
+vi keyboards/kbdfans/kbdpad_mk2/keymaps/ymlmkb_shaun/keymap.c
+gmake kbdfans/kbdpad_mk2:ymlmkb_shaun
+gmake kbdfans/kbdpad_mk2:ymlmkb_shaun:flash
+# reset the keyboard at your leisure; the flasher will check every second (for a minute, i think).
+
+# =================================================================================================================================
+# KEYPADS
 # =================================================================================================================================
 
 Nullbits Scramblepad
@@ -112,6 +143,19 @@ gmake keebio/bdn9/rev2:ymlmkb
 gmake keebio/bdn9/rev2:ymlmkb:flash
 
 # =================================================================================================================================
+# HAND WIRED
+# =================================================================================================================================
+
+Ortho Tetris (Postage Board)
+ymlmkb_ortho_tetris_ymlmkb.hex
+# reset via the button you wired to the controller.
+# oh, you didn't do that?  tough shit.
+
+vi keyboards/ymlmkb/ortho_tetris/keymaps/ymlmkb/keymap.c
+gmake ymlmkb/ortho_tetris:ymlmkb
+# i forgot how to flash the postage board.
+
+# ---------------------------------------------------------------------------------------------------------------------------------
 
 WASDv2_Hacked (Teensy 2.0)
 # reset via the button you wired to the controller.
@@ -122,14 +166,3 @@ gmake ymlmkb/wasdv2_teensy:ymlmkb
 sleep 10 &&
 teensy_loader_cli -w --mcu=atmega32u4 -v ymlmkb_wasdv2_teensy_ymlmkb.hex
 # reset the keyboard at your leisure; the flasher will wait (indefinitely?).
-
-# ---------------------------------------------------------------------------------------------------------------------------------
-
-ymlmkb_ortho_tetris_ymlmkb.hex
-# reset via the button you wired to the controller.
-# oh, you didn't do that?  tough shit.
-
-# =================================================================================================================================
-
-gmake massdrop/ctrl:sdaniels
-gmake kbdfans/kbdpad_mk2:sdaniels:flash
