@@ -125,10 +125,6 @@ led_config_t g_led_config = { {
 #    endif
 } };
 
-
-
-
-
 __attribute__ ((weak))
 void rgb_matrix_indicators_user(void)
 {
@@ -137,12 +133,6 @@ void rgb_matrix_indicators_user(void)
         rgb_matrix_set_color(30, 0xFF, 0xFF, 0xFF);
     }
 }
-
-
-
-
-
-
 
 // clang-format on
 
