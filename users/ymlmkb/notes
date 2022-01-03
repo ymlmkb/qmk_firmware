@@ -96,6 +96,16 @@ gmake cannonkeys/savage65:ymlmkb
 gmake cannonkeys/savage65:ymlmkb:flash
 # reset the keyboard at your leisure; the flasher will check every 5 seconds.
 
+# ---------------------------------------------------------------------------------------------------------------------------------
+
+KBDFans KBD67v2
+# reset by holding esc and plugging in the board.
+
+vi keyboards/kbdfans/kbd67/mkiirgb/keymaps/ymlmkb/keymap.c
+gmake kbdfans/kbd67/mkiirgb/v3:ymlmkb
+sleep 10 && cat kbdfans_kbd67_mkiirgb_v3_ymlmkb.bin > "/Volumes/KBDFANS  /FLASH.BIN"
+# hurry up and reset the keyboard.
+
 # =================================================================================================================================
 # KEYBOARDS BUILT FOR OTHERS
 # =================================================================================================================================
