@@ -7,7 +7,7 @@
     "bootloader": "atmel-dfu",
     "usb": {
         "device_ver": "0x0002",
-        "pid": "0xEF6E",
+        "pid": "0x1133",
         "vid": "0x4B50"
     },
     "diode_direction": "ROW2COL",
