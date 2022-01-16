@@ -5,7 +5,14 @@
 git checkout master
 git fetch upstream
 git pull upstream master
-git push origin master
+git push origin master --no-recurse-submodules
+
+# ---------------------------------------------------------------------------------------------------------------------------------
+
+git remote add peepeetee https://github.com/peepeetee/qmk_firmware.git
+git fetch peepeetee
+git checkout -b peepeetee-bm65rgbrev2 peepeetee/bm65rgbrev2
+git push --set-upstream origin peepeetee-bm65rgbrev2
 
 # ---------------------------------------------------------------------------------------------------------------------------------
 
