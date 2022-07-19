@@ -43,4 +43,9 @@ enum custom_keycodes {
   ,Y_REW_VI
   ,Y_WB_VI
   ,Y_EE_LIAM
+  ,Y_ID75_M1
+  ,Y_ID75_M2
+  ,Y_ID75_M3
+  ,Y_ID75_M4
+  ,Y_ID75_M5
 };

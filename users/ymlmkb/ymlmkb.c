@@ -87,6 +87,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       break;
 
+    case Y_ID75_M1:
+      if (record->event.pressed) {
+        SEND_STRING( "exec bash" SS_TAP(X_ENT) );
+      }
+      break;
+
+    case Y_ID75_M2:
+      if (record->event.pressed) {
+        SEND_STRING( "set -o vi; PS1='$PWD --+@ '; alias ll='ls -l'; alias psg='ps -ef |grep -v grep |grep'; alias cls='clear'" SS_TAP(X_ENT) );
+      }
+      break;
+
+    case Y_ID75_M3:
+      if (record->event.pressed) {
+        SEND_STRING( ":q!" SS_TAP(X_ENT) );
+      }
+      break;
+
+    case Y_ID75_M4:
+      if (record->event.pressed) {
+        SEND_STRING( ":w!" SS_TAP(X_ENT) );
+      }
+      break;
+
+    case Y_ID75_M5:
+      if (record->event.pressed) {
+        SEND_STRING( ":wq!" SS_TAP(X_ENT) );
+      }
+      break;
+
   }
 
   return process_record_keymap(keycode, record);
