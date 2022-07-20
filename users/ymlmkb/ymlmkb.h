@@ -41,8 +41,12 @@ enum custom_keycodes {
   ,Y_PRV_VI
   ,Y_NXT_VI
   ,Y_REW_VI
+  ,Y_QB_VI
   ,Y_WB_VI
+  ,Y_WQB_VI
   ,Y_EE_LIAM
+  ,Y_BASH
+  ,Y_PROFILE
   ,Y_ID75_M1
   ,Y_ID75_M2
   ,Y_ID75_M3

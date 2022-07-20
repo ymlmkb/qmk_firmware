@@ -173,6 +173,7 @@ gmake kbdfans/kbdpad_mk2:ymlmkb_shaun:flash
 
 Nullbits Scramblepad
 # reset by holding bottom-right-hand key and plugging in the board.
+# orient the board with the usb port to the left.
 
 vi keyboards/nullbitsco/scramble/keymaps/ymlmkb/keymap.c
 gmake nullbitsco/scramble:ymlmkb

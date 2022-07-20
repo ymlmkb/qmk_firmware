@@ -1,10 +1,11 @@
 #include QMK_KEYBOARD_H
 #include "ymlmkb.h"
 
-#define _BASE 0
-#define _YRGB 1
-#define _YRST 2
-#define _SAVE 3
+#define _BASE  0
+#define _YRGB1 1
+#define _YRGB2 2
+#define _YRGB3 3
+#define _YRST  4
 
 enum encoder_names {
   _LEFT,
@@ -14,69 +15,80 @@ enum encoder_names {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
-    MO(_YRGB),    RGB_TOG,   MO(_YRGB),
-    S(C(KC_TAB)), C(KC_TAB), KC_PGUP,
-    S(A(KC_TAB)), A(KC_TAB), KC_PGDN
+    MO(_YRGB1), MO(_YRGB2), MO(_YRGB3),
+    Y_QB_VI,    Y_WB_VI,    Y_WQB_VI,
+    Y_REW_VI,   Y_PRV_VI,   Y_NXT_VI
   ),
 
-  [_YRGB] = LAYOUT(
-    KC_TRNS,   KC_TRNS, KC_TRNS,
-    MO(_YRST), RGB_TOG, RGB_MOD,
-    XXXXXXX,   RGB_SPD, RGB_SPI
+  [_YRGB1] = LAYOUT(
+    KC_TRNS, RGB_TOG, RGB_TOG,
+    _______, _______, _______,
+    _______, _______, _______
   ),
 
-  [_YRST] = LAYOUT(
-    KC_TRNS,   KC_TRNS, KC_TRNS,
-    KC_TRNS,   XXXXXXX, XXXXXXX,
-    RESET,     XXXXXXX, XXXXXXX
+  [_YRGB2] = LAYOUT(
+    RGB_TOG, KC_TRNS, _______,
+    _______, _______, _______,
+    _______, _______, _______
   ),
+
+  [_YRGB3] = LAYOUT(
+    RGB_TOG, _______, KC_TRNS,
+    _______, _______, _______,
+    _______, _______, _______
+  ),
+
 };
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
 
-  if (IS_LAYER_ON(_SAVE)) {
+  if (IS_LAYER_ON(_BASE)) {
     if (index == _LEFT) {
       if (clockwise) {
-        tap_code(KC_MS_WH_UP);
+/*
+        tap_code16(S(KC_SCLN));
+        tap_code(KC_N);
+        tap_code(KC_ENT);
+*/
+        tap_code16(C(KC_LEFT));
       } else {
-        tap_code(KC_MS_WH_DOWN);
+/*
+        tap_code16(S(KC_SCLN));
+        tap_code16(S(KC_N));
+        tap_code(KC_ENT);
+*/
+        tap_code16(C(KC_RGHT));
       }
     }
     else if (index == _MIDDLE) {
       if (clockwise) {
-        tap_code16(S(KC_SCLN));
-        tap_code(KC_N);
-        tap_code(KC_ENT);
+        tap_code16(C(KC_TAB));
       } else {
-        tap_code16(S(KC_SCLN));
-        tap_code16(S(KC_N));
-        tap_code(KC_ENT);
+        tap_code16(RCS(KC_TAB));
       }
     }
     else if (index == _RIGHT) {
       if (clockwise) {
-        tap_code16(C(KC_A));
-        tap_code((KC_N));
+        tap_code16(A(KC_TAB));
       } else {
-        tap_code16(C(KC_A));
-        tap_code((KC_P));
+        tap_code16(LSA(KC_TAB));
       }
     }
   }
 
-  if (IS_LAYER_ON(_BASE)) {
+  if (IS_LAYER_ON(_YRGB1)) {
     if (index == _LEFT) {
-      if (clockwise) {
-        rgb_matrix_increase_val();
-      } else {
-        rgb_matrix_decrease_val();
-      }
-    }
-    else if (index == _MIDDLE) {
       if (clockwise) {
         rgb_matrix_step();
       } else {
         rgb_matrix_step_reverse();
+      }
+    }
+    else if (index == _MIDDLE) {
+      if (clockwise) {
+        rgb_matrix_increase_val();
+      } else {
+        rgb_matrix_decrease_val();
       }
     }
     else if (index == _RIGHT) {
@@ -88,15 +100,18 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     }
   }
 
-  if (IS_LAYER_ON(_YRGB)) {
-    if (index == _LEFT) {
+  if (IS_LAYER_ON(_YRGB2)) {
+    if (index == _MIDDLE) {
       if (clockwise) {
         rgb_matrix_increase_hue();
       } else {
         rgb_matrix_decrease_hue();
       }
     }
-    else if (index == _RIGHT) {
+  }
+
+  if (IS_LAYER_ON(_YRGB3)) {
+    if (index == _RIGHT) {
       if (clockwise) {
         rgb_matrix_increase_sat();
       } else {
@@ -105,12 +120,5 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     }
   }
 
-  return true;
+  return false;
 }
-
-// KC_MPLY
-// KC_MFFD
-// KC_MRWD
-// KC__MUTE
-// KC__VOLUP
-// KC__VOLDOWN
