@@ -111,36 +111,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       break;
 
-    case Y_ID75_M1:
-      if (record->event.pressed) {
-        SEND_STRING( "# macro 1" SS_TAP(X_ENT) );
-      }
-      break;
-
-    case Y_ID75_M2:
-      if (record->event.pressed) {
-        SEND_STRING( "# macro 2" SS_TAP(X_ENT) );
-      }
-      break;
-
-    case Y_ID75_M3:
-      if (record->event.pressed) {
-        SEND_STRING( "# macro 3" SS_TAP(X_ENT) );
-      }
-      break;
-
-    case Y_ID75_M4:
-      if (record->event.pressed) {
-        SEND_STRING( "# macro 4" SS_TAP(X_ENT) );
-      }
-      break;
-
-    case Y_ID75_M5:
-      if (record->event.pressed) {
-        SEND_STRING( "# macro 5" SS_TAP(X_ENT) );
-      }
-      break;
-
   }
 
   return process_record_keymap(keycode, record);
