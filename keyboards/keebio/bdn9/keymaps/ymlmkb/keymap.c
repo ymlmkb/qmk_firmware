@@ -7,15 +7,15 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
-    G(KC_C),   G(KC_V), G(KC_PGUP),
-    MO(_FUNC), KC_UP,   G(KC_PGDN),
+    G(KC_C),   G(KC_V), KC_PGUP,
+    MO(_FUNC), KC_UP,   KC_PGDN,
     KC_LEFT,   KC_DOWN, KC_RGHT
   ),
 
   [_FUNC] = LAYOUT(
-    Y_PROFILE, _______, _______,
-    KC_TRNS,   _______, MO(_RGB),
-    _______,   _______, _______
+    Y_PROFILE, _______,    _______,
+    KC_TRNS,   G(KC_PGUP), MO(_RGB),
+    _______,   G(KC_PGDN), _______
   ),
 
   [_RGB] = LAYOUT(
