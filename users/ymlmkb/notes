@@ -190,6 +190,16 @@ gmake keebio/bdn9/rev2:ymlmkb
 # reset the keypad
 gmake keebio/bdn9/rev2:ymlmkb:flash
 
+# ---------------------------------------------------------------------------------------------------------------------------------
+
+Nullbits Tidbit
+# reset via the button on the PCB.
+
+vi keyboards/nullbitsco/tidbit/keymaps/ymlmkb/keymap.c
+gmake nullbitsco/tidbit:ymlmkb
+# reset the keypad
+gmake nullbitsco/tidbit:ymlmkb:flash
+
 # =================================================================================================================================
 # HAND WIRED
 # =================================================================================================================================

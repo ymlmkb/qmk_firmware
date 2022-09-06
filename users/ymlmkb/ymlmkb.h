@@ -34,5 +34,6 @@ enum custom_keycodes {
   ,Y_WQB_VI
   ,Y_EE_LIAM
   ,Y_BASH
-  ,Y_PROFILE
+  ,Y_PRF1
+  ,Y_PRF2
 };
