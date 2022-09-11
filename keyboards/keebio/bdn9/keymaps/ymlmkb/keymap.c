@@ -13,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_FUNC] = LAYOUT(
-    Y_PROFILE, _______,    _______,
+    Y_PRF1,    Y_PRF2,     _______,
     KC_TRNS,   G(KC_PGUP), MO(_RGB),
     _______,   G(KC_PGDN), _______
   ),
