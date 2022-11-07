@@ -111,6 +111,7 @@ KBDFans KBD67v2
 vi keyboards/kbdfans/kbd67/mkiirgb/keymaps/ymlmkb/keymap.c
 gmake kbdfans/kbd67/mkiirgb/v3:ymlmkb
 sleep 10 && cat kbdfans_kbd67_mkiirgb_v3_ymlmkb.bin > "/Volumes/KBDFANS  /FLASH.BIN"
+dd if=kbdfans_kbd67_mkiirgb_v3_ymlmkb.bin of=/media/clsmyth/KBDFANS/FLASH.BIN bs=512 conv=notrunc oflag=direct,sync
 # hurry up and reset the keyboard.
 
 # ---------------------------------------------------------------------------------------------------------------------------------
