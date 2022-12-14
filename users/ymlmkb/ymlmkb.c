@@ -113,7 +113,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case Y_PRF2:
       if (record->event.pressed) {
-        SEND_STRING( "set -o vi; PS1='\\[\\e[35m\\][\\D{%a %Y-%m-%d %H:%M:%S}] [\\u] [\\H] $PWD\\[\\e[00m\\] [$?] \\$ '; export EDITOR=vi; export VISUAL=vi; alias ll='ls -l'; alias psg='ps -ef |grep -v grep |grep'; alias cls='clear'; unalias ls cp mv rm" SS_TAP(X_ENT) );
+        SEND_STRING( "set -o vi; export EDITOR=vi; export VISUAL=vi; alias ll='ls -l'; alias psg='ps -ef |grep -v grep |grep'; alias cls=clear; alias vi=vim; unalias ls cp mv rm" SS_TAP(X_ENT) );
+      }
+      break;
+
+    case Y_PRF3:
+      if (record->event.pressed) {
+        SEND_STRING( "PS1='\\[\\e[35m\\][\\D{%a %Y-%m-%d %H:%M:%S}] [\\u] [\\H] $PWD\\[\\e[00m\\] [$?] \\$ '" SS_TAP(X_ENT) );
       }
       break;
 

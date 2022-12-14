@@ -18,6 +18,9 @@
 #define Y_NSPC   C(KC_RGHT)
 #define Y_PSPC S(C(KC_LEFT))
 
+#define Y_BRD    G(A(KC_I))
+#define Y_NBRD S(G(A(KC_I)))
+
 enum custom_keycodes {
    MD_BOOT = SAFE_RANGE
   ,Y_PRV_GS
@@ -36,4 +39,5 @@ enum custom_keycodes {
   ,Y_BASH
   ,Y_PRF1
   ,Y_PRF2
+  ,Y_PRF3
 };
