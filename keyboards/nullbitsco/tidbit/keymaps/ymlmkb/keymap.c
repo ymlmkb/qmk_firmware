@@ -15,10 +15,10 @@ enum encoder_names {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
                                  Y_PRF1,   Y_PRF2,  Y_PRF3,
-    ___,     ___,     KC_MUTE,   G(KC_X),  G(KC_C), G(KC_V),
-    ___,     ___,     RGB_TOG,   Y_NBRD,   Y_BRD,   KC_PGUP,
-    ___,     ___,     RGB_TOG,   KC_DOT,   KC_UP,   KC_PGDN,
-    ___,     ___,     RGB_TOG,   KC_LEFT,  KC_DOWN, KC_RGHT
+    _______, _______, KC_MUTE,   G(KC_X),  G(KC_C), G(KC_V),
+    _______, _______, RGB_TOG,   Y_NBRD,   Y_BRD,   KC_PGUP,
+    _______, _______, RGB_TOG,   KC_DOT,   KC_UP,   KC_PGDN,
+    _______, _______, RGB_TOG,   KC_LEFT,  KC_DOWN, KC_RGHT
     ),
 };
 

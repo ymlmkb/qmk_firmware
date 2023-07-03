@@ -23,37 +23,37 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case Y_PRV_GS:
       if (record->event.pressed) {
-        SEND_STRING( SS_LCTRL("a") "p" );
+        SEND_STRING( SS_LCTL("a") "p" );
       }
       break;
 
     case Y_NXT_GS:
       if (record->event.pressed) {
-        SEND_STRING( SS_LCTRL("a") "n" );
+        SEND_STRING( SS_LCTL("a") "n" );
       }
       break;
 
     case Y_TOG_GS:
       if (record->event.pressed) {
-        SEND_STRING( SS_LCTRL("a") SS_LCTRL("a") );
+        SEND_STRING( SS_LCTL("a") SS_LCTL("a") );
       }
       break;
 
     case Y_SCL_GS:
       if (record->event.pressed) {
-        SEND_STRING( SS_LCTRL("a") SS_TAP(X_ESC) );
+        SEND_STRING( SS_LCTL("a") SS_TAP(X_ESC) );
       }
       break;
 
     case Y_NEW_GS:
       if (record->event.pressed) {
-        SEND_STRING( SS_LCTRL("a") "n");
+        SEND_STRING( SS_LCTL("a") "n");
       }
       break;
 
     case Y_DET_GS:
       if (record->event.pressed) {
-        SEND_STRING( SS_LCTRL("a") "d" );
+        SEND_STRING( SS_LCTL("a") "d" );
       }
       break;
 

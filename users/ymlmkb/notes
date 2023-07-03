@@ -59,8 +59,7 @@ Drop Alt
 
 vi keyboards/massdrop/alt/keymaps/ymlmkb/keymap.c
 gmake massdrop/alt:ymlmkb
-cd ~/Opt/massdrop-loader
-./mdloader_mac --first --download ~/Source/qmk_firmware/massdrop_alt_ymlmkb.bin --restart
+mdloader --first --download ~/Source/ymlmkb/qmk_firmware/massdrop_alt_ymlmkb.bin --restart
 # reset the keyboard at your leisure; the flasher will check every second (for a minute, i think).
 
 # ---------------------------------------------------------------------------------------------------------------------------------
@@ -153,24 +152,32 @@ Drop CTRL
 
 vi keyboards/massdrop/ctrl/keymaps/ymlmkb_shaun/keymap.c
 gmake massdrop/ctrl:ymlmkb_shaun
-gmake massdrop/ctrl:ymlmkb_shaun:flash
-cd ~/Opt/massdrop-loader
-./mdloader_mac --first --download ~/Source/qmk_firmware/massdrop_ctrl_ymlmkb_sdaniels.bin --restart
-# reset the keyboard at your leisure; the flasher will check every second (for a minute, i think).
-
-# ---------------------------------------------------------------------------------------------------------------------------------
-
-KBDFans KBDPad Mark II
-# reset somehow
-
-vi keyboards/kbdfans/kbdpad_mk2/keymaps/ymlmkb_shaun/keymap.c
-gmake kbdfans/kbdpad_mk2:ymlmkb_shaun
-gmake kbdfans/kbdpad_mk2:ymlmkb_shaun:flash
+mdloader --first --download ~/Source/ymlmkb/qmk_firmware/massdrop_ctrl_ymlmkb_shaun.bin --restart
 # reset the keyboard at your leisure; the flasher will check every second (for a minute, i think).
 
 # =================================================================================================================================
 # KEYPADS
 # =================================================================================================================================
+
+KBDFans KBDPad Mark II
+# reset somehow
+
+vi keyboards/kbdfans/kbdpad/mk2/keymaps/ymlmkb_shaun/keymap.c
+gmake kbdfans/kbdpad/mk2:ymlmkb_shaun
+gmake kbdfans/kbdpad/mk2:ymlmkb_shaun:flash
+# reset the keyboard at your leisure; the flasher will check every second (for a minute, i think).
+
+# ---------------------------------------------------------------------------------------------------------------------------------
+
+KBDFans KBDPad Mark III
+# reset somehow
+
+vi keyboards/kbdfans/kbdpad/mk3/keymaps/ymlmkb_shaun/keymap.c
+gmake kbdfans/kbdpad/mk3:ymlmkb_shaun
+gmake kbdfans/kbdpad/mk3:ymlmkb_shaun:flash
+# reset the keyboard at your leisure; the flasher will check every second (for a minute, i think).
+
+# ---------------------------------------------------------------------------------------------------------------------------------
 
 Nullbits Scramblepad
 # reset by holding bottom-right-hand key and plugging in the board.
