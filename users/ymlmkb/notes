@@ -104,7 +104,7 @@ gmake cannonkeys/savage65:ymlmkb:flash
 
 # ---------------------------------------------------------------------------------------------------------------------------------
 
-KBDFans KBD67v2
+KBDFans KBD67mkiiRGBv3
 # reset by holding esc and plugging in the board.
 
 vi keyboards/kbdfans/kbd67/mkiirgb/keymaps/ymlmkb/keymap.c
